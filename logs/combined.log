@@ -1,0 +1,4 @@
+2025-05-09 20:45:13 [ERROR]: User creation failed: Operation `users.findOne()` buffering timed out after 10000ms
+2025-05-09 20:46:40 [ERROR]: User creation failed: Operation `users.findOne()` buffering timed out after 10000ms
+2025-05-09 20:47:08 [ERROR]: User creation failed: Operation `users.findOne()` buffering timed out after 10000ms
+2025-05-09 21:16:44 [ERROR]: User creation failed: Operation `users.findOne()` buffering timed out after 10000ms
