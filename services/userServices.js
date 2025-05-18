@@ -4,7 +4,6 @@ const bcrypt = require("bcrypt");
 const createUser = async ({
   firstName,
   lastName,
-  mobileNo,
   emailId,
   password,
   role,
@@ -21,7 +20,6 @@ const createUser = async ({
     const user = new User({
       firstName,
       lastName,
-      mobileNo,
       emailId,
       password: hashPassword, // fixed field name
       role: role || "user",

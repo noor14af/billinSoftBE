@@ -13,12 +13,6 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Last name is required'], // Ensures lastName is provided
         trim: true // Removes leading/trailing spaces from the last name
     },
-    // User's mobile number (required and validated for a 10-digit number)
-    mobileNo: {
-        type: Number,
-        required: [true, 'Mobile no is required'],
-        match: [/^\d{10}$/, 'Mobile no must be 10 digits']// Validates mobile number format
-    },
     // User's email address (required, unique, validated, and converted to lowercase)
     emailId: {
         type: String,
