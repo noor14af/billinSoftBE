@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
         trim: true // Removes leading/trailing spaces from the last name
     },
     // User's email address (required, unique, validated, and converted to lowercase)
-    emailId: {
+    email: {
         type: String,
         required: [true, 'Email is required'], // Ensures email is provided
         unique: true, // Ensures email is unique

@@ -4,12 +4,12 @@ const bcrypt = require("bcrypt");
 const createUser = async ({
   firstName,
   lastName,
-  emailId,
+  email,
   password,
   role,
 } = {}) => {
   try {
-    const existingUser = await User.findOne({ emailId });
+    const existingUser = await User.findOne({ email });
     if (existingUser) {
       throw new Error("User already exists with this email");
     }
@@ -20,7 +20,7 @@ const createUser = async ({
     const user = new User({
       firstName,
       lastName,
-      emailId,
+      email,
       password: hashPassword, // fixed field name
       role: role || "user",
     });
@@ -34,11 +34,9 @@ const createUser = async ({
     throw new Error(`User creation failed: ${error.message}`);
   }
 };
-const authenticationUser = async (emailId, password) => {
+const authenticationUser = async (email, password) => {
   try {
-    console.log("emailId", emailId);
-
-    const user = await User.findOne({ emailId });
+    const user = await User.findOne({ email });
     if (!user) {
       throw new Error("User does not exist!");
     }

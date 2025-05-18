@@ -18,11 +18,11 @@ const registerUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
   try {
-    const { emailId, password } = req.body;
+    const { email, password } = req.body;
 
-    const user = await userServices.authenticationUser(emailId, password);
+    const user = await userServices.authenticationUser(email, password);
 
-    const token = generateToken({ emailId: user.emailId, role: user.role });
+    const token = generateToken({ email: user.email, role: user.role });
     res.cookie("authToken", token);
 
     res.status(200).json({
